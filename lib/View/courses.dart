@@ -53,6 +53,7 @@ class AllCoursesPageState extends State<AllCoursesPage> {
             IconButton(
               icon: Icon(Icons.cancel),
               onPressed: () {
+                databaseHelper.clearSP();
                 Navigator.of(context).push(new MaterialPageRoute(
                   builder: (BuildContext context) => new LoginPage(),
                 ));
@@ -218,6 +219,7 @@ class StudentCoursesPageState extends State<StudentCoursesPage> {
             IconButton(
               icon: Icon(Icons.cancel),
               onPressed: () {
+                databaseHelper.clearSP();
                 Navigator.of(context).push(new MaterialPageRoute(
                   builder: (BuildContext context) => new LoginPage(),
                 ));
@@ -349,6 +351,7 @@ class ShowCoursePageState extends State<ShowCoursePage> {
             IconButton(
               icon: Icon(Icons.cancel),
               onPressed: () {
+                databaseHelper.clearSP();
                 Navigator.of(context).push(new MaterialPageRoute(
                   builder: (BuildContext context) => new LoginPage(),
                 ));

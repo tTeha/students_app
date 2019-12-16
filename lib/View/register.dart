@@ -96,7 +96,8 @@ class RegisterPageState extends State<RegisterPage> {
                       Padding(padding: new EdgeInsets.all(10)),
                       TextField(
                         controller: _passwordController,
-                        keyboardType: TextInputType.visiblePassword,
+                        autofocus: false,
+                        obscureText: true,
                         decoration: InputDecoration(
                           labelText: 'Password',
                           hintText: 'Place your password',

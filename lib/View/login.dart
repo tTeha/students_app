@@ -48,9 +48,12 @@ class LoginPageState extends State<LoginPage> {
             _showDialog('Error', result["Error"]);
           } else {
             if (databaseHelper.status) {
-              Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new ReviewPage(),
-              ));
+              if (result['user']['is_teacher'] == true)
+                _showDialog("Error", "user not found");
+              else
+                Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new ReviewPage(),
+                ));
             } else {
               _showDialog('Error', result.toString());
             }
@@ -99,7 +102,8 @@ class LoginPageState extends State<LoginPage> {
                       new Padding(padding: new EdgeInsets.all(10)),
                       TextField(
                         controller: _passwordController,
-                        keyboardType: TextInputType.visiblePassword,
+                        autofocus: false,
+                        obscureText: true,
                         decoration: InputDecoration(
                           labelText: 'Password',
                           hintText: 'Place your password',

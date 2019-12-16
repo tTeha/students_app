@@ -195,4 +195,9 @@ class DatabaseHelper {
     print('read toke : $value');
     return value;
   }
+
+  clearSP() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+  }
 }
